@@ -1,8 +1,7 @@
 please
  
 install 
-or
-import
+
 
 
 hashlib
