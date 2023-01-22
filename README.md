@@ -1,14 +1,2 @@
-please
- 
-install 
-
-
-
-hashlib
-&
-colorama
-
-
-
 encrypt anythink
-decrypt to passwordlist or crack (crack only numbers)
+decrypt by passwordlist or crack by local system (only nymber for crack) 
