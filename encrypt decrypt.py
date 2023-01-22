@@ -6,7 +6,6 @@ while a==1:
 #libraries
     import hashlib
     import os
-    from colorama import Fore
 
 
 #start
@@ -20,7 +19,7 @@ while a==1:
     # print(" ---------------------------------")
     print(" ---------------------------------")
     print("| 1=encrypt                       |")
-    print("| 2=decrypt(passwordlist) Soon ...|")
+    print("| 2=decrypt(passwordlist)         |")
     print("| 3=decrypt(crack & only number)  |")
     print("| 0=exit                          |")
     print(" ---------------------------------")
@@ -52,7 +51,7 @@ while a==1:
 
     if numberofmenu==1:
         print("")
-        Hash=input("What number to encrypt= ")
+        Hash=input("What word to encrypt= ")
         print("")
         print(" -------------------------")
         print("| 1=md5                  |")
@@ -65,16 +64,16 @@ while a==1:
 
         if algoritm==1:
             Hash=hashlib.md5(Hash.encode()).hexdigest()
-            print(Fore.RED,"your hash =",Hash+Fore.RESET)
+            print("your hash =",Hash)
         if algoritm==2:
             Hash=hashlib.sha1(Hash.encode()).hexdigest()
-            print(Fore.RED,"your hash =",Hash+Fore.RESET)
+            print("your hash =",Hash)
         if algoritm==3:
             Hash=hashlib.sha256(Hash.encode()).hexdigest()
-            print(Fore.RED,"your hash =",Hash+Fore.RESET)
+            print("your hash =",Hash)
         if algoritm==4:
             Hash=hashlib.sha512(Hash.encode()).hexdigest()
-            print(Fore.RED,"your hash =",Hash+Fore.RESET) 
+            print("your hash =",Hash) 
   
 
 
@@ -88,7 +87,7 @@ while a==1:
         print("| 3=sha256               |")
         print("| 4=sha512               |")
         print(" -------------------------")
-        algoritmdecrypt=int(input("What algorithm do you want?"))
+        algoritmdecrypt=int(input("What algorithm do you want? "))
         if algoritmdecrypt==1:
             for i in range(0,9999999999):
                 i=str(i)
@@ -96,7 +95,7 @@ while a==1:
                 i=hashlib.md5(i.encode()).hexdigest()
                 print ("processing---please wait...! ",cunt)
                 if i==Hash:
-                    print(Fore.RED+"crack success & your number = ",cunt+Fore.RESET)
+                    print("crack success & your number = ",cunt)
                     break
         
         if algoritmdecrypt==2:
@@ -106,7 +105,7 @@ while a==1:
                 i=hashlib.sha1()(i.encode()).hexdigest()
                 print ("processing---please wait...! ",cunt)
                 if i==Hash:
-                    print(Fore.RED+"crack success & your number = ",cunt+Fore.RESET)
+                    print("crack success & your number = ",cunt)
                     break
         
         if algoritmdecrypt==3:
@@ -116,7 +115,7 @@ while a==1:
                 i=hashlib.sha256(i.encode()).hexdigest()
                 print ("processing---please wait...! ",cunt)
                 if i==Hash:
-                    print(Fore.RED+"crack success & your number = ",cunt+Fore.RESET)
+                    print("crack success & your number = ",cunt)
                     break
         
         if algoritmdecrypt==4:
@@ -126,6 +125,74 @@ while a==1:
                 i=hashlib.sha512(i.encode()).hexdigest()
                 print ("processing---please wait...! ",cunt)
                 if i==Hash:
-                    print(Fore.RED+"crack success & your number = ",cunt+Fore.RESET)
+                    print("crack success & your number = ",cunt)
                     break
                 
+    if numberofmenu==2:
+        Hash=input("What word to encrypt= ")
+        print("")
+        print(" -------------------------")
+        print("| 1=md5                  |")
+        print("| 2=sha1                 |")
+        print("| 3=sha256               |")
+        print("| 4=sha512               |")
+        print(" -------------------------")
+        algoritmdecrypt2=int(input("What algorithm do you want? "))
+        if algoritmdecrypt2==1:
+
+            passwordlist=(input("please enter passwordlist address, for example ((c:/Users/amirh\Desktop\passwordlist.txt))= "))
+            print("")
+            passwordlist=open(passwordlist,"r")
+            for i in passwordlist:
+                cunt=i
+                i=i.rstrip()
+                i=hashlib.md5(str(i).encode()).hexdigest()  
+                if i==Hash:
+                    print("crack success & your code = ",cunt)
+
+
+
+
+        if algoritmdecrypt2==2:
+            
+            passwordlist=(input("please enter passwordlist address, for example ((c:/Users/amirh\Desktop\passwordlist.txt))= "))
+            print("")
+            passwordlist=open(passwordlist,"r")
+            for i in passwordlist:
+                cunt=i
+                i=i.rstrip()
+                i=hashlib.sha1(str(i).encode()).hexdigest()  
+                if i==Hash:
+                    print("crack success & your code = ",cunt)
+
+
+
+                    
+        if algoritmdecrypt2==3:
+            
+            passwordlist=(input("please enter passwordlist address, for example ((c:/Users/amirh\Desktop\passwordlist.txt))= "))
+            print("")
+            passwordlist=open(passwordlist,"r")
+            for i in passwordlist:
+                cunt=i
+                i=i.rstrip()
+                i=hashlib.sha256(str(i).encode()).hexdigest()  
+                if i==Hash:
+                    print("crack success & your code = ",cunt)
+
+
+                    
+
+
+                    
+        if algoritmdecrypt2==4:
+            
+            passwordlist=(input("please enter passwordlist address, for example ((c:/Users/amirh\Desktop\passwordlist.txt))= "))
+            print("")
+            passwordlist=open(passwordlist,"r")
+            for i in passwordlist:
+                cunt=i
+                i=i.rstrip()
+                i=hashlib.sha512(str(i).encode()).hexdigest()  
+                if i==Hash:
+                    print("crack success & your code = ",cunt)
